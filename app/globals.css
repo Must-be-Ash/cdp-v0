@@ -88,9 +88,9 @@
     background-color: #222222;
   }
   body {
-    background-color: #222222;
+    background-color: #222222 !important;
     background-image: none;
     min-height: 100vh;
-    @apply bg-background text-foreground;
+    @apply text-foreground;
   }
 }
