@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from 'next/font/google';
 import "./globals.css";
 import { CDPProvider } from "@/components/cdp-provider";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,10 +23,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" style={{ backgroundColor: '#222222' }}>
-      <body className={inter.className} style={{ backgroundColor: '#222222' }}>
-        <CDPProvider>{children}</CDPProvider>
-      </body>
-    </html>
+    <html lang="en" suppressHydrationWarning><body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+        >
+          <CDPProvider>{children}</CDPProvider>
+        </ThemeProvider>
+      </body></html>
   );
 }

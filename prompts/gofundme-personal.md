@@ -26,6 +26,21 @@ Transform this template into a GoFundMe-style personal fundraising page for medi
 - **Medical/Professional Validation:** Doctor notes, official documentation if relevant
 - **Photo Gallery:** Multiple images showing the person, situation, family
 
+### 2. Personal Story Section (`components/story-section.tsx`)
+**Import and use `<StorySection />` component instead of `<SocialLinks />`:**
+\`\`\`typescript
+// In app/page.tsx, replace <SocialLinks /> with:
+<StorySection
+  title="Our Story"
+  content={`Three months ago, our lives changed forever when Sarah was diagnosed with stage 2 breast cancer. As a single mother of two young children, Sarah has always been the rock of our family. She worked two jobs to support her kids and was always the first to help others in our community.
+The diagnosis came suddenly after a routine checkup, and the medical bills are overwhelming. Insurance covers some treatments, but we're facing $35,000 in out-of-pocket costs for specialized treatments, medication, and childcare during recovery.
+Sarah is a fighter, and her doctors are optimistic about her treatment plan. With surgery scheduled for next month and chemotherapy starting shortly after, we need our community's help to focus on healing instead of worrying about finances.
+Every donation, no matter the size, brings us closer to giving Sarah the best possible chance at recovery and getting back to being the amazing mom and friend we all know and love.`}
+  imageUrl="/family-photo.jpg"
+  imageAlt="Sarah with her two children at the park"
+/>
+\`\`\`
+
 ## DONATION OPTIONS (Transform WishlistItems)
 **OPTION A - Meaningful Donation Levels:**
 - $25 - "Cover one meal during hospital stay"
@@ -40,6 +55,19 @@ Transform this template into a GoFundMe-style personal fundraising page for medi
 - Custom donation input with suggested amounts
 - Clear breakdown of how funds will be used
 - Immediate impact messaging
+
+### 4. Donation Section (`components/custom-amount-input.tsx`)
+**Import and use `<CustomAmountInput />` component instead of `<WishlistItems />`:**
+\`\`\`typescript
+// In app/page.tsx, replace <WishlistItems /> with:
+<CustomAmountInput
+  recipientAddress={process.env.NEXT_PUBLIC_RECIPIENT_ADDRESS || "0xRecipientAddressHere"}
+  suggestedAmounts={[25, 50, 100, 250]}
+  title="Support Sarah's Recovery"
+  description="Choose an amount or enter a custom donation"
+  showMessage={true}
+/>
+\`\`\`
 
 ## COLOR PALETTE & STYLING
 - Primary: Trustworthy and hopeful colors (Soft blue #3b82f6, Gentle green #10b981)
@@ -79,6 +107,13 @@ Transform this template into a GoFundMe-style personal fundraising page for medi
 - Share buttons for social media
 - "Report campaign" option for platform integrity
 
+### 5. Footer (`components/footer.tsx`)
+**Update with personal/family information:**
+- Campaign organizer name and relationship to beneficiary
+- Contact information for questions
+- Link to updates (if you plan to post them elsewhere)
+- Privacy and fund usage commitments
+
 ## WHAT NOT TO TOUCH
 - Do NOT modify any wallet functionality in components/wallet-send-button.tsx
 - Do NOT change onramp functionality in components/onramp-button.tsx
@@ -87,7 +122,7 @@ Transform this template into a GoFundMe-style personal fundraising page for medi
 - Do NOT change the payment processing functions
 
 ## IMPORTANT NOTES
-- Remove the <PromptBlock /> component from the final result
+- Remove the `<PromptBlock />` component from the final result
 - Focus heavily on storytelling and emotional connection
 - Ensure mobile-first responsive design for easy sharing
 - Make donation process extremely simple and trust-building
@@ -121,3 +156,76 @@ After transformation, the user must configure these environment variables:
 The app will not function without these environment variables properly set.
 
 Create a deeply personal, trustworthy fundraising page that connects with people's hearts while providing complete transparency about fund usage and campaign progress.
+
+## 📸 IMAGES TO ADD
+Add these images to `/public/` folder:
+- `avatar.png` - Personal or family photo showing the person in better times (square, 200x200px+)
+- `family-photo.jpg` - Story section image showing person with family/friends (1200x600px+)
+- Keep images positive and hopeful
+- Ensure images are under 1MB each
+
+## 💭 PSYCHOLOGICAL ELEMENTS FOR SUPPORT
+### Emotional Connection:
+- Share personal details that make the person relatable
+- Include hopes, dreams, and what recovery means
+- Show the person as more than their crisis
+- Express genuine gratitude and humility
+
+### Social Proof:
+- "23 people have already donated"
+- "Our community is coming together"
+- Show progress toward goal
+- Include supporter comments if possible
+
+### Urgency Without Pressure:
+- Clear timeline for medical needs
+- Explain what happens if goal isn't reached
+- Focus on positive outcomes rather than negative consequences
+
+## 🔧 REQUIRED SETUP AFTER TRANSFORMATION
+**Your app won't work without these environment variables. Get them here:**
+### 1. Coinbase Developer Platform Keys
+Visit https://portal.cdp.coinbase.com/projects
+**Add to your `.env.local` file:**
+\`\`\`
+NEXT_PUBLIC_CDP_PROJECT_ID=your_project_id_here
+NEXT_PUBLIC_RECIPIENT_ADDRESS=your_personal_wallet_address_here
+CDP_API_KEY_NAME=your_api_key_name_here
+CDP_API_KEY_PRIVATE_KEY=your_private_key_here
+\`\`\`
+
+### 2. Configure Your Domains
+**Onramp Configuration:**
+https://portal.cdp.coinbase.com/products/onramp
+- Add your domain to allowed origins
+
+**Embedded Wallets Configuration:**
+https://portal.cdp.coinbase.com/products/embedded-wallets
+- Add your domain to allowed origins
+
+### 3. Get Your Keys:
+- **Project ID**: From your CDP dashboard
+- **Recipient Address**: Your personal crypto wallet address where donations go
+- **API Keys**: Generate from https://portal.cdp.coinbase.com/projects/api-keys
+
+## 💡 IMPORTANT CONSIDERATIONS
+### Privacy & Safety:
+- Only share information you're comfortable being public
+- Consider privacy implications of blockchain transactions
+- Be careful not to share too many personal details
+- Verify with family/friends before sharing their information
+
+### Legal & Taxes:
+- Check local regulations about fundraising
+- Consider tax implications of receiving donations
+- Keep records of all donations received
+- Consult with a tax professional if amounts are significant
+
+### Campaign Success Tips:
+- Share widely on social media platforms
+- Ask friends and family to share with their networks
+- Post regular updates on progress and recovery
+- Always thank supporters publicly (with their permission)
+
+## ✅ FINAL RESULT
+A deeply personal, trustworthy GoFundMe-style fundraising page that tells your story compellingly, builds community support, and makes it easy for people to help during your time of need using crypto donations!
