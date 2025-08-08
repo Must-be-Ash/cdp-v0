@@ -266,7 +266,7 @@ export function WalletSendButton({
           size="sm"
           onClick={handleFundClick}
           disabled={isLoading || !isInitialized}
-          className="h-11 px-6 font-medium rounded-2xl bg-white/15 backdrop-blur-sm border border-white/25 text-white hover:bg-white/25 hover:border-white/35 transition-all duration-200 shadow-lg"
+          className="h-11 px-6 font-medium rounded-2xl bg-amber-600 hover:bg-amber-700 text-white border-0 transition-all duration-200 shadow-lg"
         >
           {!isInitialized
             ? "Initializing..."
@@ -274,28 +274,28 @@ export function WalletSendButton({
             ? "Processing..."
             : needsOnramp
             ? "Add Funds"
-            : "Fund"}
+            : "Buy Coffee"}
         </Button>
-        {error && <p className="text-xs text-red-400 mt-1">{error}</p>}
+        {error && <p className="text-xs text-red-600 mt-1">{error}</p>}
         {txHash && (
-          <p className="text-xs text-green-400 mt-1">Success!</p>
+          <p className="text-xs text-green-600 mt-1">Coffee sent! ☕</p>
         )}
         {/* Show insufficient balance message when needed */}
         {needsOnramp && (
-          <p className="text-xs text-yellow-400 mt-1">
+          <p className="text-xs text-amber-700 mt-1">
             Insufficient balance - click to add funds
           </p>
         )}
       </div>
       <Dialog open={showLoginModal} onOpenChange={handleModalClose}>
-        <DialogContent className="max-w-sm p-8 bg-black/20 backdrop-blur-2xl border border-white/10 shadow-xl rounded-3xl">
+        <DialogContent className="max-w-sm p-8 bg-white/95 backdrop-blur-2xl border border-amber-200 shadow-xl rounded-3xl">
           <DialogHeader className="space-y-4 text-center">
-            <DialogTitle className="text-xl font-medium text-white">
+            <DialogTitle className="text-xl font-medium text-amber-900">
               {loginStep === "email"
-                ? "Sign In to Continue"
+                ? "Sign In to Buy Coffee"
                 : "Verify Your Email"}
             </DialogTitle>
-            <DialogDescription className="text-gray-300 text-sm">
+            <DialogDescription className="text-amber-700 text-sm">
               {loginStep === "email"
                 ? "Enter your email address to receive a verification code."
                 : `We sent a 6-digit code to ${email}. Please enter it below.`}
@@ -311,14 +311,14 @@ export function WalletSendButton({
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   disabled={isAuthLoading}
-                  className="h-11 px-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-white/30 focus:border-white/30 transition-all"
+                  className="h-11 px-4 bg-amber-50 border border-amber-200 rounded-xl text-amber-900 placeholder:text-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 transition-all"
                 />
                 {authError && (
-                  <p className="text-sm text-red-400">{authError}</p>
+                  <p className="text-sm text-red-600">{authError}</p>
                 )}
                 <Button
                   type="submit"
-                  className="w-full h-11 font-medium rounded-xl bg-white/15 backdrop-blur-sm border border-white/25 text-white hover:bg-white/25 transition-all"
+                  className="w-full h-11 font-medium rounded-xl bg-amber-600 hover:bg-amber-700 text-white transition-all"
                   disabled={isAuthLoading || !email}
                 >
                   {isAuthLoading ? "Sending..." : "Send Verification Code"}
@@ -335,10 +335,10 @@ export function WalletSendButton({
                   disabled={isAuthLoading}
                   maxLength={6}
                   pattern="[0-9]{6}"
-                  className="h-11 px-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-white/30 focus:border-white/30 transition-all text-center font-mono tracking-wider"
+                  className="h-11 px-4 bg-amber-50 border border-amber-200 rounded-xl text-amber-900 placeholder:text-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 transition-all text-center font-mono tracking-wider"
                 />
                 {authError && (
-                  <p className="text-sm text-red-400">{authError}</p>
+                  <p className="text-sm text-red-600">{authError}</p>
                 )}
                 <div className="flex space-x-3">
                   <Button
@@ -346,16 +346,16 @@ export function WalletSendButton({
                     variant="outline"
                     onClick={() => setLoginStep("email")}
                     disabled={isAuthLoading}
-                    className="flex-1 h-11 bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 rounded-xl transition-all"
+                    className="flex-1 h-11 bg-amber-50 border border-amber-200 text-amber-700 hover:bg-amber-100 rounded-xl transition-all"
                   >
                     Back
                   </Button>
                   <Button
                     type="submit"
-                    className="flex-1 h-11 font-medium rounded-xl bg-white/15 backdrop-blur-sm border border-white/25 text-white hover:bg-white/25 transition-all"
+                    className="flex-1 h-11 font-medium rounded-xl bg-amber-600 hover:bg-amber-700 text-white transition-all"
                     disabled={isAuthLoading || otp.length !== 6}
                   >
-                    {isAuthLoading ? "Verifying..." : "Verify & Pay"}
+                    {isAuthLoading ? "Verifying..." : "Verify & Buy Coffee"}
                   </Button>
                 </div>
               </form>
