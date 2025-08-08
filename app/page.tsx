@@ -1,7 +1,6 @@
 import { Hero } from "@/components/hero";
 import { SocialLinks } from "@/components/social-links";
 import { WishlistItems } from "@/components/wishlist-items";
-import { PromptBlock } from "@/components/prompt-block";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
           <Hero />
           <SocialLinks />
           <WishlistItems />
-          <PromptBlock />
           <Footer />
         </div>
       </main>

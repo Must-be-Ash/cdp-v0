@@ -5,16 +5,16 @@ export function Footer() {
     <footer className="text-center py-8">
       <TextShimmer
         as="p"
-        className="text-sm" // Removed text-slate-400 here as TextShimmer handles base color
+        className="text-sm"
         duration={2}
         spread={2}
       >
-        Built with{" "}
+        Powered by coffee and community ☕ Built with{" "}
         <a
           href="https://v0.dev"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-bold" // Make it bold
+          className="font-bold"
         >
           v0
         </a>{" "}
@@ -23,7 +23,7 @@ export function Footer() {
           href="https://docs.cdp.coinbase.com/embedded-wallets/docs"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-bold" // Make it bold
+          className="font-bold"
         >
           Coinbase Developer Platform
         </a>

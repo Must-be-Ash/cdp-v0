@@ -69,11 +69,11 @@ CDP Embedded Wallets create **Web3 functionality that feels like Web2**, enablin
 
 ### Step 1: Clone & Install
 
-```bash
+\`\`\`bash
 git clone <your-repo>
 cd cdp-v0
 npm install
-```
+\`\`\`
 
 ### Step 2: Get Your CDP API Keys
 
@@ -90,11 +90,11 @@ npm install
 
 Create a `.env.local` file:
 
-```env
+\`\`\`env
 CDP_PROJECT_ID=your_project_id
 CDP_API_KEY_NAME=your_api_key_name
 CDP_API_KEY_PRIVATE_KEY=your_private_key
-```
+\`\`\`
 
 ### Step 4: Configure CDP Settings
 
@@ -106,9 +106,9 @@ CDP_API_KEY_PRIVATE_KEY=your_private_key
 
 ### Step 5: Run Development Server
 
-```bash
+\`\`\`bash
 npm run dev
-```
+\`\`\`
 
 Open [http://localhost:3000](http://localhost:3000) to see your app!
 
@@ -139,7 +139,7 @@ The combination of v0.dev's rapid prototyping and CDP's seamless Web3 integratio
 
 Edit the wishlist data in `lib/wishlist.ts`:
 
-```typescript
+\`\`\`typescript
 export const wishlistItems = [
   {
     id: 1,
@@ -150,7 +150,7 @@ export const wishlistItems = [
   }
   // Add more items...
 ]
-```
+\`\`\`
 
 ### Update Branding
 
