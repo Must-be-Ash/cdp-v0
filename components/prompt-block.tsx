@@ -127,13 +127,13 @@ interface CoffeeCounterProps {
 
 export function CoffeeCounter({ totalCoffees, monthlyGoal, className = "" }: CoffeeCounterProps) {
   return (
-    <div className={\`bg-amber-50 border border-amber-200 rounded-3xl p-6 mb-6 text-center \${className}\`}>
+    <div className={\`bg-amber-50 border border-amber-200 rounded-3xl p-6 mb-6 text-center \$\{className}\`}>
       <div className="flex items-center justify-center gap-2 mb-2">
         <span className="text-3xl">☕</span>
         <span className="text-2xl font-bold text-amber-800">{totalCoffees}</span>
       </div>
       <p className="text-amber-700 text-sm font-medium">
-        {monthlyGoal ? \`\${totalCoffees}/\${monthlyGoal} coffees this month\` : 'Total coffees received'}
+        {monthlyGoal ? \`\$\{totalCoffees}/\$\{monthlyGoal} coffees this month\` : 'Total coffees received'}
       </p>
       {monthlyGoal && totalCoffees >= monthlyGoal && (
         <p className="text-green-600 text-xs mt-1">🎉 Monthly goal reached!</p>
@@ -587,7 +587,7 @@ export function WishlistProgress({ totalItems, fundedItems, totalValue, fundedVa
   const itemProgress = (fundedItems / totalItems) * 100;
   const valueProgress = (fundedValue / totalValue) * 100;
   return (
-    <div className={\`bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-3xl p-6 mb-6 \${className}\`}>
+    <div className={\`bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-3xl p-6 mb-6 \$\{className}\`}>
       <h3 className="text-lg font-semibold text-gray-800 mb-4 text-center">✨ Wishlist Progress</h3>
       <div className="space-y-4">
         <div>
@@ -596,7 +596,7 @@ export function WishlistProgress({ totalItems, fundedItems, totalValue, fundedVa
             <span>{fundedItems}/{totalItems}</span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-3">
-            <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full transition-all duration-500" style={{ width: \`\${itemProgress}%\` }} />
+            <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full transition-all duration-500" style={{ width: \`\$\{itemProgress}%\` }} />
           </div>
         </div>
         <div>
@@ -605,7 +605,7 @@ export function WishlistProgress({ totalItems, fundedItems, totalValue, fundedVa
             <span>$\{fundedValue.toLocaleString()}/\${totalValue.toLocaleString()}</span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-3">
-            <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 h-3 rounded-full transition-all duration-500" style={{ width: \`\${valueProgress}%\` }} />
+            <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 h-3 rounded-full transition-all duration-500" style={{ width: \`\$\{valueProgress}%\` }} />
           </div>
         </div>
       </div>
@@ -1223,7 +1223,7 @@ interface VideoEmbedProps {
 
 export function VideoEmbed({ videoUrl, title = "Project Demo", className = "" }: VideoEmbedProps) {
   return (
-    <div className={\`bg-black/20 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 mb-6 \${className}\`}>
+    <div className={\`bg-black/20 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 mb-6 \$\{className}\`}>
       {title && (
         <h3 className="text-lg font-semibold text-white mb-4 text-center">{title}</h3>
       )}
