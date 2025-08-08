@@ -14,6 +14,20 @@ export function PromptBlock() {
 
       // Fetch the markdown content
       const response = await fetch(`/api/prompts/${filename}`);
+      
+      // Check if response is ok before trying to parse JSON
+      if (!response.ok) {
+        console.error('Failed to fetch prompt:', response.status, response.statusText);
+        return;
+      }
+
+      // Check if response is actually JSON
+      const contentType = response.headers.get('content-type');
+      if (!contentType?.includes('application/json')) {
+        console.error('Response is not JSON:', contentType);
+        return;
+      }
+
       const data = await response.json();
 
       if (data.content) {
@@ -21,7 +35,7 @@ export function PromptBlock() {
         setCopiedPrompt(index);
         setTimeout(() => setCopiedPrompt(null), 2000);
       } else {
-        console.error('Failed to load prompt content');
+        console.error('No content in response:', data);
       }
     } catch (error) {
       console.error('Error copying prompt:', error);
