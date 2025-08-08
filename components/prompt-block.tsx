@@ -11,11 +11,11 @@ export function PromptBlock() {
     try {
       // Extract filename from filePath (e.g., "/prompts/fund-my-craft.md" -> "fund-my-craft.md")
       const filename = filePath.split('/').pop();
-      
+
       // Fetch the markdown content
       const response = await fetch(`/api/prompts/${filename}`);
       const data = await response.json();
-      
+
       if (data.content) {
         await navigator.clipboard.writeText(data.content);
         setCopiedPrompt(index);
