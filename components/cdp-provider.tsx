@@ -8,8 +8,8 @@ const cdpConfig: Config = {
   projectId: process.env.NEXT_PUBLIC_CDP_PROJECT_ID!,
   basePath: "https://api.cdp.coinbase.com/platform",
   useMock: false,
-  // Debugging is enabled in development for easier troubleshooting
-  debugging: process.env.NODE_ENV === 'development',
+  // Debugging disabled to avoid showing "User is not authenticated" messages
+  debugging: false,
 };
 
 export function CDPProvider({ children }: { children: React.ReactNode }) {
