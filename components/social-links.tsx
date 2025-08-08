@@ -26,7 +26,7 @@ const socialLinks = [
 
 export function SocialLinks() {
   return (
-    <div className="flex justify-center gap-4 my-6">
+    <div className="flex justify-center gap-4 mb-8 mt-0.5 mt-0.5 mt-1 mt-1.5 mt-1 mt-0.5 mt-px mt-0000.5.5xxxx">
       {socialLinks.map((link) => (
         <a
           key={link.name}

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <div className="flex flex-col items-center text-center py-8 mb-6">
+    <div className="flex flex-col items-center text-center pt-8 pb-4">
       <Image
         src="/avatar.png"
         alt="Jane Doe"
