@@ -55,7 +55,7 @@ export function PromptBlock() {
     : null;
 
   return (
-    <div className="mt-8 p-6 bg-black/20 backdrop-blur-2xl border border-white/10 rounded-3xl">
+    <div className="mt-8 p-6 bg-black/20 border border-white/10 rounded-3xl">
       {currentStep === 'selection' && (
         <>
           <div className="text-center mb-6">
