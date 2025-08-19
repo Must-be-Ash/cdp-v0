@@ -173,14 +173,14 @@ Don't forget to add your environment variables in the Vercel dashboard!
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 
-## 🤝 Contributing
+---
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+**Made by [@must_be_ash] (https://x.com/Must_be_Ash)**
+
+This is made by me and not an official CDP app. It's not perfect and it's not meant to be the end product though it's fully functional and production ready. I made this as your starting point so you don't have to start from scratch. It's meant to get you started to build your next idea 🤍
+
+---
 
 ## 📄 License
 
 MIT License - feel free to use this template for your projects!
-
----
-
-Built with ❤️ using [v0.dev](https://v0.dev) and [Coinbase Developer Platform](https://www.coinbase.com/developer-platform)
