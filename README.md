@@ -1,5 +1,7 @@
 # 🚀 Next.js + Coinbase Developer Platform Template
 
+> **Outdated, not maintained.** Next.js and CDP packages are out of date and need to be updated before use.
+
 A modern wishlist/donation platform built with [v0.dev](https://v0.dev) and powered by [Coinbase Developer Platform (CDP) Embedded Wallets](https://www.coinbase.com/developer-platform) for seamless Web3 payments.
 
 ## ✨ What Makes This Special
